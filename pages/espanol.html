@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>{{ settings.metaTitle }} - {{ settings.metaDescription }}</title>
+
+    {{> head }}
+
+    <!--- THEMES: in settings.json change 'glitch' to 'gallery', 'menu', or any other theme in the layout/themes folder --->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/styles/themes/{{settings.theme}}.css"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <div class="content">
+          {{> avatar }}
+          <br />
+          {{> name }}
+
+          <!--- NEXT STEPS: Easy, responsive YouTube/iframe embeds? We've got a helper for that:
+          <div class="video-wrapper__16-9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GSP0b85BKmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          --->
+          <p>
+            Construyendo una comunidad entre los observadores de aves que son
+            personas Negras, indígenas o de color en Chicago.
+          </p>
+          <ul class="link-list tab-top tab-bottom">
+            <!--we use a helper defined in vite.config.js to give the li a class name based on the url-->
+            <li class="docs_google_com">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfFVIfDskadduzcwoNFyALhLByko7gbu_u5lZN8PBfvkODP8w/viewform?usp=sf_link"
+                ><span
+                  ><b>Slack</b>
+                  <hr />
+                  Hable con sus compañeros observadores de aves de Chicago sobre avistamientos de aves, identificación o próximos eventos.</span
+                ></a
+              >
+            </li>
+            <!--we use a helper defined in vite.config.js to give the li a class name based on the url-->
+            <li class="mailbob_io">
+              <a href="https://mailbob.io/u/chicagobipocbirders/"
+                ><span
+                  ><b>Boletín</b>
+                  <hr />
+                  Suscríbete a nuestro boletín.</span
+                ></a
+              >
+            </li>
+            <!--we use a helper defined in vite.config.js to give the li a class name based on the url-->
+            <li class="calendar_google_com">
+              <a
+                href="https://calendar.google.com/calendar/u/0/render?cid=bipocbirderschicago%40gmail.com"
+                ><span
+                  ><b>Calendario</b>
+                  <hr />
+                  Echa un vistazo a nuestro calendario de observación de aves
+                </span></a
+              >
+            </li>
+            <!--we use a helper defined in vite.config.js to give the li a class name based on the url-->
+            <li class="instagram_com">
+              <a
+                href="https://instagram.com/chicago.bipoc.birders?igshid=OGQ5ZDc2ODk2ZA=="
+                ><span
+                  ><b>Instagram</b>
+                  <hr />
+                  Síguenos en Instagram @chicago.bipoc.birdersr</span
+                ></a
+              >
+            </li>
+            <!--we use a helper defined in vite.config.js to give the li a class name based on the url-->
+            <li class="www_eventbrite_com">
+              <a
+                href="https://www.eventbrite.com/o/chicago-bipoc-birders-47305888343"
+                ><span
+                  ><b>Eventbrite</b>
+                  <hr />
+                  Síganos en Eventbrite para recibir notificaciones sobre los próximos eventos de observación de aves.</span
+                ></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p>Envíanos un correo electrónico:</p>
+      {{> social }}
+
+      <!--- FOOTER: You can safely remove the Glitch footer (but tell your friends!) {{> glitch-footer }}✂ --->
+    </main>
+  </body>
+</html>

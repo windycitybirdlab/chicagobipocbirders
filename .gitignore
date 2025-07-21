@@ -6,6 +6,14 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+node_modules
+web_modules
+.firebase
+.firebaserc
+.glitchdotcom.json
+.pm2
+.snowpack
+build
 
 # Additional Ruby/bundler ignore for when you run: bundle install
 /vendor

@@ -1,0 +1,62 @@
+{
+  "metaTitle": "Chicago BIPOC Birders",
+  "metaDescription": "A grassroots effort to build community between the Black, Indigenous, and birders of color across Chicago.",
+  "name": "Chicago BIPOC Birders",
+  "theme": "glitch",
+  "avatarImage": "https://cdn.glitch.global/489b7f02-870c-4a3a-9eeb-5a867095a481/chicagobipocbirderslogo.png?v=1676222287516",
+  "links": [
+    {
+      "url": "https://docs.google.com/forms/d/e/1FAIpQLSfFVIfDskadduzcwoNFyALhLByko7gbu_u5lZN8PBfvkODP8w/viewform?usp=sf_link",
+      "title": "Slack",
+      "text": "Chat with your fellow Chicago BIPOC birders about bird sightings, ID, or upcoming events"
+    },
+    {
+      "url":"https://mailbob.io/u/chicagobipocbirders/",
+      "title":"Newsletter",
+      "text":"Subscribe to our Newsletter"
+    },
+    {
+      "url": "https://calendar.google.com/calendar/u/0/render?cid=bipocbirderschicago%40gmail.com",
+      "title": "Calendar",
+      "text": "Take a look at our birding Calendar "
+    },
+    {
+      "url":"https://instagram.com/chicago.bipoc.birders?igshid=OGQ5ZDc2ODk2ZA==",
+      "title":"Instagram",
+      "text":"Follow our new instagram @chicago.bipoc.birders"
+    },
+    {
+      "url": "https://www.eventbrite.com/o/chicago-bipoc-birders-47305888343",
+      "title": "Eventbrite",
+      "text": "Follow us on Eventbrite to get notified about upcoming birding events."
+    } 
+    
+  ],
+  
+  "social": {
+    "glitch": "",
+    "spotify": "",
+    "substack": "",
+    "dev": "",
+    "facebook": "",
+    "github": "",
+    "gitlab": "",
+    "hashnode": "",
+    "instagram": "",
+    "linkedin": "",
+    "medium": "",
+    "patreon": "",
+    "pinterest": "",
+    "twitter": "",
+    "youtube": "",
+    "twitch": "",
+    "tiktok": "",
+    "podcast": "",
+    "soundcloud": "",
+    "bandcamp": "",
+    "mastodon": "",
+    "stackoverflow": "",
+    "kofi": "",
+    "email": "bipocbirderschicago@gmail.com"
+  }
+}
