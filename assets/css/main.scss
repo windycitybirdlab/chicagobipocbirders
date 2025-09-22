@@ -1,0 +1,153 @@
+:root {
+  --wrapper-height: 80vh;
+  --avatar-max-width: 280px;
+  --font-family: sans-serif;
+  --font-family-header: sans-serif;
+  --font-family-list: monospace;
+  --color-bg: #BDBDBD;
+  --color-bg-alt: #FFFFFF;
+  --color-text-main: #000000;
+  --color-primary: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: var(--wrapper-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 2rem 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* Avatar styles */
+.avatar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  max-width: var(--avatar-max-width);
+  max-height: var(--avatar-max-width);
+  margin: 1rem 0rem .5rem;
+  border-radius: 10%;
+}
+
+/* Typography */
+h1.name {
+  margin-top: 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 2rem;
+  display: inline-flex;
+  color: var(--color-primary);
+  justify-content: center;
+  font-family: var(--font-family-header);
+  font-weight: bold;
+}
+
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+  font-size: clamp(1rem, 0.2500rem + 3.3333vw, 2rem);
+  color: var(--color-text-main);
+}
+
+/* Link list styles */
+ul.link-list {
+  margin: 0.5em 0 2.5rem;
+  padding-left: 0px;
+  list-style: none;
+}
+
+ul.link-list li {
+  font-family: var(--font-family-list);
+  font-weight: 100;
+  clear: both;
+  width: 100%;
+  text-align: center;
+  margin: 1rem auto;
+  font-size: clamp(0.7rem, 0.3250rem + 1.6667vw, 1.2rem);
+}
+
+ul.link-list li a {
+  min-height: 5.5em;
+  min-width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid var(--color-primary);
+  padding: 1.5rem;
+  position: relative;
+  text-decoration: none;
+  color: var(--color-text-main);
+  transition: background 0.2s linear;
+}
+
+ul.link-list li a:hover {
+  background: var(--color-primary);
+}
+
+ul.link-list li a span {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+ul.link-list li a span strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+ul.link-list li a span hr {
+  margin: 0.5rem 0;
+  border: none;
+  border-top: 1px solid var(--color-text-main);
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons a {
+  border-bottom: none;
+  background: transparent;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-profile-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.social-profile-icon path {
+  fill: var(--color-bg-alt);
+}
+
+.social-icons a:hover .social-profile-icon path {
+  fill: var(--color-text-main);
+}

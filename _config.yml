@@ -1,0 +1,164 @@
+# Site Settings
+title: "Chicago BIPOC Birders"
+description: "A grassroots effort to build community among BIPOC birders of Chicago."
+url: "https://windycitybirdlab.github.io"
+baseurl: "/chicagobipocbirders"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Collections
+collections_dir: collections
+
+# Exclude files from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+
+---
+
+# _data/settings.yml - Your Site Content
+name: "Chicago BIPOC Birders"
+avatar_image: "/assets/images/chicagobipocbirderslogo.png"
+description: "A grassroots effort to build community among BIPOC birders of Chicago."
+
+links:
+  - url: "https://docs.google.com/forms/d/e/1FAIpQLSfFVIfDskadduzcwoNFyALhLByko7gbu_u5lZN8PBfvkODP8w/viewform?usp=sf_link"
+    title: "Slack"
+    text: "Chat with your fellow Chicago BIPOC birders about bird sightings, ID, or upcoming events"
+  
+  - url: "https://mailbob.io/u/chicagobipocbirders/"
+    title: "Newsletter"
+    text: "Subscribe to our Newsletter"
+  
+  - url: "https://calendar.google.com/calendar/u/0/render?cid=bipocbirderschicago%40gmail.com"
+    title: "Calendar"
+    text: "Take a look at our birding Calendar"
+  
+  - url: "https://instagram.com/chicago.bipoc.birders?igshid=OGQ5ZDc2ODk2ZA=="
+    title: "Instagram"
+    text: "Follow our new instagram @chicago.bipoc.birders"
+  
+  - url: "https://www.eventbrite.com/o/chicago-bipoc-birders-47305888343"
+    title: "Eventbrite"
+    text: "Follow us on Eventbrite to get notified about upcoming birding events."
+
+social:
+  email: "bipocbirderschicago@gmail.com"
+  instagram: "https://instagram.com/chicago.bipoc.birders"
+
+contact:
+  email: "bipocbirderschicago@gmail.com"
+
+---
+
+# Gemfile - Ruby Dependencies
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.3.0"
+gem "minima", "~> 2.5"
+
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-sitemap"
+end
+
+# Windows and JRuby does not include zoneinfo files
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", ">= 1", "< 3"
+  gem "tzinfo-data"
+end
+
+# Performance-booster for watching directories on Windows
+gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+
+---
+
+# _layouts/default.html - Main Page Template
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <!-- OpenGraph/Social sharing -->
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.data.settings.avatar_image }}">
+    <meta name="twitter:card" content="summary">
+    
+    <link rel="icon" href="{{ site.baseurl }}{{ site.data.settings.avatar_image }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  </head>
+  <body>
+    <main>
+      {{ content }}
+    </main>
+  </body>
+</html>
+
+---
+
+# index.html - Homepage Content
+---
+layout: default
+title: Chicago BIPOC Birders
+description: A grassroots effort to build community between the Black, Indigenous, and birders of color across Chicago.
+---
+
+<div class="wrapper">
+  <div class="content">
+    
+    <!-- Avatar Image -->
+    <div class="avatar-container">
+      <img src="{{ site.baseurl }}{{ site.data.settings.avatar_image }}" 
+           class="avatar" 
+           alt="{{ site.data.settings.name }}">
+    </div>
+    
+    <h1 class="name">{{ site.data.settings.name }}</h1>
+    
+    <p>{{ site.data.settings.description }}</p>
+    
+    <!-- Links Section -->
+    {% if site.data.settings.links %}
+    <ul class="link-list">
+      {% for link in site.data.settings.links %}
+      <li>
+        <a href="{{ link.url }}" target="_blank" rel="noopener">
+          <span>
+            <strong>{{ link.title }}</strong>
+            <hr>
+            {{ link.text }}
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    
+    <!-- Contact Section -->
+    {% if site.data.settings.contact.email %}
+    <p>Send us an email:</p>
+    
+    <div class="social-icons">
+      <a href="mailto:{{ site.data.settings.contact.email }}" 
+         aria-label="Send {{ site.data.settings.name }} an email">
+        <svg class="social-profile-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 3H21C21.2652 3 21.5196 3.10536 21.7071 3.29289C21.8946 3.48043 22 3.73478 22 4V20C22 20.2652 21.8946 20.5196 21.7071 20.7071C21.5196 20.8946 21.2652 21 21 21H3C2.73478 21 2.48043 20.8946 2.29289 20.7071C2.10536 20.5196 2 20.2652 2 20V4C2 3.73478 2.10536 3.48043 2.29289 3.29289C2.48043 3.10536 2.73478 3 3 3ZM12.06 11.683L5.648 6.238L4.353 7.762L12.073 14.317L19.654 7.757L18.346 6.244L12.061 11.683H12.06Z" fill="black"/>
+        </svg>
+      </a>
+    </div>
+    {% endif %}
+    
+  </div>
+</div>
+    emoji: "📱"

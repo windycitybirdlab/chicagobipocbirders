@@ -1,43 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>{{ settings.metaTitle }} - {{ settings.metaDescription }}</title>
+---
+layout: default
+title: Chicago BIPOC Birders
+description: A grassroots effort to build community between the Black, Indigenous, and birders of color across Chicago.
+---
+
+<div class="wrapper">
+  <div class="content">
     
-    {{> head }}
+    <!-- Avatar Image -->
+    <div class="avatar-container">
+      <img src="{{ site.baseurl }}{{ site.data.settings.avatar_image }}" 
+           class="avatar" 
+           alt="{{ site.data.settings.name }}">
+    </div>
     
-    <!--- THEMES: in settings.json change 'glitch' to 'gallery', 'menu', or any other theme in the layout/themes folder --->
-    <link rel="stylesheet" type="text/css" href="/styles/themes/{{settings.theme}}.css" />
-  </head>
-  <body>
-    <main>
-      <div class="wrapper">
-        <div class="content">
-          
-          
-          {{> avatar }}   
-          <br>
-          {{> name }}
-          
-          <!--- NEXT STEPS: Easy, responsive YouTube/iframe embeds? We've got a helper for that:
-          <div class="video-wrapper__16-9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/GSP0b85BKmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          --->
-          <p>
-            A grassroots effort to build community among BIPOC birders of Chicago.
-          </p>
-          <a style="border-bottom: none; background:none; color:blue" href="/pages/espanol.html">[ 🌐 - español ]</a>
-          {{> links }} 
-          
-        </div>
-      </div>
-      <p>
-        Send us an email:
-      </p>
-       {{> social }}
-      
-      <!--- FOOTER: You can safely remove the Glitch footer (but tell your friends!) {{> glitch-footer }}✂ --->
-      
-    </main>
-  </body>
-</html>
+    <h1 class="name">{{ site.data.settings.name }}</h1>
+    
+    <p>{{ site.data.settings.description }}</p>
+    
+    <!-- Links Section -->
+    {% if site.data.settings.links %}
+    <ul class="link-list">
+      {% for link in site.data.settings.links %}
+      <li>
+        <a href="{{ link.url }}" target="_blank" rel="noopener">
+          <span>
+            <strong>{{ link.title }}</strong>
+            <hr>
+            {{ link.text }}
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    
+    <!-- Contact Section -->
+    {% if site.data.settings.contact.email %}
+    <p>Send us an email:</p>
+    
+    <div class="social-icons">
+      <a href="mailto:{{ site.data.settings.contact.email }}" 
+         aria-label="Send {{ site.data.settings.name }} an email">
+        <svg class="social-profile-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 3H21C21.2652 3 21.5196 3.10536 21.7071 3.29289C21.8946 3.48043 22 3.73478 22 4V20C22 20.2652 21.8946 20.5196 21.7071 20.7071C21.5196 20.8946 21.2652 21 21 21H3C2.73478 21 2.48043 20.8946 2.29289 20.7071C2.10536 20.5196 2 20.2652 2 20V4C2 3.73478 2.10536 3.48043 2.29289 3.29289C2.48043 3.10536 2.73478 3 3 3ZM12.06 11.683L5.648 6.238L4.353 7.762L12.073 14.317L19.654 7.757L18.346 6.244L12.061 11.683H12.06Z" fill="black"/>
+        </svg>
+      </a>
+    </div>
+    {% endif %}
+    
+  </div>
+</div>
